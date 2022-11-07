@@ -8,7 +8,7 @@
 }
 
 .headerOption:hover,
-.headerOption:focus {
+.headerOption:active {
   color: #000;
 }
 
