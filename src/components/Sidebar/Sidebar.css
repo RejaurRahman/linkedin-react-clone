@@ -82,3 +82,30 @@
   font-size: 13px;
   padding: 5px;
 }
+
+.sidebar__recentItem {
+  display: flex;
+  font-size: 13px;
+  color: #686a6c;
+  cursor: pointer;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.sidebar__recentItem:hover,
+.sidebar__recentItem:active {
+  background-color: #eef3f8;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #000;
+}
+
+.sidebar__recentItem:focus-visible {
+  outline: 2px solid #0af;
+  outline-offset: 3px;
+}
+
+.sidebar__hash {
+  margin: 0 10px 0 5px;
+}
