@@ -1,0 +1,23 @@
+.inputOption {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  color: #686a6c;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.inputOption:hover,
+.inputOption:active {
+  background-color: #eef3f8;
+  border-radius: 10px;
+}
+
+.inputOption:focus-visible {
+  outline: 2px solid #0af;
+  outline-offset: 3px;
+}
+
+.inputOption > h4 {
+  margin-left: 5px;
+}
