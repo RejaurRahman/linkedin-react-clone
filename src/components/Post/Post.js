@@ -15,18 +15,18 @@ const Post = ({ name, description, message, photoUrl }) => {
 
         <div className='post__info'>
           <h2>
-            Ronny Rahman
+            {name}
           </h2>
 
           <p>
-            This is a test
+            {description}
           </p>
         </div>
       </div>
 
       <div className='post__body'>
         <p>
-          This worked ... yes
+          {message}
         </p>
       </div>
 

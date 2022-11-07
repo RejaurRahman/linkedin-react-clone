@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Feed.css';
 import InputOption from '../InputOption/InputOption';
 import CreateIcon from '@mui/icons-material/Create';
@@ -7,8 +7,57 @@ import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Post from '../Post/Post';
+import { db } from '../../services/firebase';
+import {
+  collection,
+  onSnapshot,
+  doc,
+  setDoc,
+  serverTimestamp,
+  orderBy,
+  query,
+} from 'firebase/firestore';
 
 const Feed = () => {
+  const [input, setInput] = useState('');
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    try {
+      onSnapshot(
+        query(
+          collection(db, 'posts'),
+          orderBy('timestamp', 'desc')
+        ),
+
+        (snapshot) => {
+          setPosts(
+            snapshot.docs.map((doc) => ({
+              id: doc.id,
+              data: doc.data(),
+            }))
+          );
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  const sendPost = async (e) => {
+    e.preventDefault();
+
+    await setDoc(doc(db, 'posts', input), {
+      name: 'ronny rahman',
+      description: 'this is the test',
+      message: input,
+      photoUrl: '',
+      timestamp: serverTimestamp()
+    });
+
+    setInput('');
+  }
+
   return (
     <div className='feed'>
       <div className='feed__inputContainer'>
@@ -16,8 +65,18 @@ const Feed = () => {
           <CreateIcon />
 
           <form>
-            <input type='text' />
-            <button type='submit'>send</button>
+            <input
+              type='text'
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+
+            <button
+              onClick={sendPost}
+              type='submit'
+            >
+              send
+            </button>
           </form>
         </div>
 
@@ -48,11 +107,15 @@ const Feed = () => {
         </div>
       </div>
 
-      <Post
-        name='Ronny Rahman'
-        description='This is a test'
-        message='This worked ... yes'
-      />
+      {posts.map(({ id, data: { name, description, message, photoUrl }}) => (
+        <Post
+          key={id}
+          name={name}
+          description={description}
+          message={message}
+          photoUrl={photoUrl}
+        />
+      ))}
     </div>
   )
 }
