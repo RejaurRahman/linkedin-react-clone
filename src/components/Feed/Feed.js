@@ -6,6 +6,7 @@ import ImageIcon from '@mui/icons-material/Image';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
+import Post from '../Post/Post';
 
 const Feed = () => {
   return (
@@ -46,6 +47,12 @@ const Feed = () => {
           />
         </div>
       </div>
+
+      <Post
+        name='Ronny Rahman'
+        description='This is a test'
+        message='This worked ... yes'
+      />
     </div>
   )
 }
