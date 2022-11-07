@@ -1,0 +1,29 @@
+.headerOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  color: #686a6c;
+  cursor: pointer;
+}
+
+.headerOption:hover,
+.headerOption:focus {
+  color: #000;
+}
+
+.headerOption:focus-visible {
+  outline: 2px solid #0af;
+  outline-offset: 3px;
+}
+
+.headerOption__title {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.headerOption__icon {
+  object-fit: contain;
+  height: 25px !important;
+  width: 25px !important;
+}
