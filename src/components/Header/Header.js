@@ -7,13 +7,14 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import HeaderOption from '../HeaderOption/HeaderOption';
+import LinkedinLogo from '../../assets/linkedin-icon.png';
 
 const Header = () => {
   return (
     <div className='header'>
       <div className='header__left'>
         <img
-          src='https://img.icons8.com/external-justicon-flat-justicon/100/000000/external-linkedin-social-media-justicon-flat-justicon.png'
+          src={LinkedinLogo}
           alt='Linkedin Icon'
         />
 
