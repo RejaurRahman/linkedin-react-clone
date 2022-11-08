@@ -13,7 +13,7 @@ export const userSlice = createSlice({
       state.user = null;
     }
   }
-});
+})
 
 export const { login, logout } = userSlice.actions;
 
