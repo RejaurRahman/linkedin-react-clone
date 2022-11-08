@@ -9,7 +9,7 @@ import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './services/firebase';
 
 const App = () => {
-  const user =useSelector(selectUser);
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,13 +19,13 @@ const App = () => {
           email: userAuth.email,
           uid: userAuth.uid,
           displayName: userAuth.displayName,
-          photoURL: userAuth.photoURL
+          photoUrl: userAuth.photoURL
         }))
       } else {
         dispatch(logout());
       }
     })
-  }, [])
+  })
 
   return (
     <div className='app'>
