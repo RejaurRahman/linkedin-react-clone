@@ -7,14 +7,14 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import HeaderOption from '../HeaderOption/HeaderOption';
-import LinkedinLogo from '../../assets/linkedin-icon.png';
+import LinkedinIcon from '../../assets/linkedin-icon.png';
 
 const Header = () => {
   return (
     <div className='header'>
       <div className='header__left'>
         <img
-          src={LinkedinLogo}
+          src={LinkedinIcon}
           alt='Linkedin Icon'
         />
 
