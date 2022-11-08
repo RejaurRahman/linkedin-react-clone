@@ -38,11 +38,12 @@
   background-color: #0074b1;
   border-radius: 5px;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .login > form > button:hover,
 .login > form > button:active {
-  background-color: #0177b7;
+  background-color: #00517b;
 }
 
 .login > form > input:focus-visible,
