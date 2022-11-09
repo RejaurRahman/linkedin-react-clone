@@ -32,7 +32,7 @@ const Feed = () => {
       setPosts(
         snapshot.docs.map((doc) => ({
           id: doc.id,
-          data: doc.data(),
+          data: doc.data()
         }))
       )
     })
