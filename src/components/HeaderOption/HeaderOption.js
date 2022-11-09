@@ -1,6 +1,6 @@
-import React from 'react';
-import './HeaderOption.css';
-import { Avatar } from '@mui/material';
+import React from 'react'
+import './HeaderOption.css'
+import { Avatar } from '@mui/material'
 
 const HeaderOption = ({ avatar, Icon, title }) => {
   return (
@@ -20,4 +20,4 @@ const HeaderOption = ({ avatar, Icon, title }) => {
   )
 }
 
-export default HeaderOption;
+export default HeaderOption

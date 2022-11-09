@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import './Feed.css';
-import InputOption from '../InputOption/InputOption';
-import CreateIcon from '@mui/icons-material/Create';
-import ImageIcon from '@mui/icons-material/Image';
-import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
-import EventNoteIcon from '@mui/icons-material/EventNote';
-import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
-import Post from '../Post/Post';
-import { db } from '../../services/firebase';
+import React, { useEffect, useState } from 'react'
+import './Feed.css'
+import InputOption from '../InputOption/InputOption'
+import CreateIcon from '@mui/icons-material/Create'
+import ImageIcon from '@mui/icons-material/Image'
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions'
+import EventNoteIcon from '@mui/icons-material/EventNote'
+import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay'
+import Post from '../Post/Post'
+import { db } from '../../services/firebase'
 import {
   collection,
   onSnapshot,
@@ -16,33 +16,27 @@ import {
   serverTimestamp,
   orderBy,
   query,
-} from 'firebase/firestore';
+} from 'firebase/firestore'
 
 const Feed = () => {
-  const [input, setInput] = useState('');
-  const [posts, setPosts] = useState([]);
+  const [input, setInput] = useState('')
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    try {
-      onSnapshot(
-        query(
-          collection(db, 'posts'),
-          orderBy('timestamp', 'desc')
-        ),
+    const data = query(
+      collection(db, 'posts'),
+      orderBy('timestamp', 'desc')
+    )
 
-        (snapshot) => {
-          setPosts(
-            snapshot.docs.map((doc) => ({
-              id: doc.id,
-              data: doc.data(),
-            }))
-          );
-        }
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+    onSnapshot(data, (snapshot) => {
+      setPosts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    })
+  })
 
   const sendPost = async (e) => {
     e.preventDefault();
@@ -53,9 +47,9 @@ const Feed = () => {
       message: input,
       photoUrl: '',
       timestamp: serverTimestamp()
-    });
+    })
 
-    setInput('');
+    setInput('')
   }
 
   return (
@@ -120,4 +114,4 @@ const Feed = () => {
   )
 }
 
-export default Feed;
+export default Feed

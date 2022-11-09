@@ -1,5 +1,5 @@
-import React from 'react';
-import './InputOption.css';
+import React from 'react'
+import './InputOption.css'
 
 function InputOption({ title, Icon, color }) {
   return (
@@ -11,7 +11,7 @@ function InputOption({ title, Icon, color }) {
         {title}
       </h4>
     </div>
-  );
+  )
 }
 
-export default InputOption;
+export default InputOption

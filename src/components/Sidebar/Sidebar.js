@@ -1,6 +1,6 @@
-import React from 'react';
-import './Sidebar.css';
-import { Avatar } from '@mui/material';
+import React from 'react'
+import './Sidebar.css'
+import { Avatar } from '@mui/material'
 
 const Sidebar = () => {
   const recentItem = (topic) => (
@@ -49,4 +49,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar;
+export default Sidebar
