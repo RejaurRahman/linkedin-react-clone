@@ -8,15 +8,15 @@ const Sidebar = () => {
   const user = useSelector(selectUser)
 
   const recentItem = (topic) => (
-    <div className="sidebar__recentItem">
-      <span className="sidebar__hash">#</span>
+    <div className='sidebar__recentItem'>
+      <span className='sidebar__hash'>#</span>
       <p>{topic}</p>
     </div>
   )
 
   return (
     <div className='sidebar'>
-      <div className="sidebar__top">
+      <div className='sidebar__top'>
         <img
           src='https://i.pinimg.com/736x/dc/55/c2/dc55c27ccd37988dd63e5db558dca3d7.jpg' alt='Background Banner'
         />
@@ -46,11 +46,11 @@ const Sidebar = () => {
       <div className='sidebar__bottom'>
         <h4>recent</h4>
 
-        { recentItem('reactjs') }
-        { recentItem('programming') }
-        { recentItem('ui') }
-        { recentItem('developer') }
-        { recentItem('design') }
+        {recentItem('reactjs')}
+        {recentItem('programming')}
+        {recentItem('ui')}
+        {recentItem('developer')}
+        {recentItem('design')}
       </div>
     </div>
   )

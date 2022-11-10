@@ -43,7 +43,7 @@ const Feed = () => {
   })
 
   const sendPost = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     await setDoc(doc(db, 'posts', input), {
       name: user.displayName,
