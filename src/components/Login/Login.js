@@ -98,7 +98,7 @@ const Login = () => {
       </form>
 
       <p>
-        Not a member?
+        Not a member?{' '}
         <span
           className='login__register'
           onClick={register}
