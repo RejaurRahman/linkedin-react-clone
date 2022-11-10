@@ -7,14 +7,15 @@ import Sidebar from './components/Sidebar/Sidebar'
 import Login from './components/Login/Login'
 import { login, logout, selectUser } from './features/userSlice'
 import { auth } from './services/firebase'
+import { onAuthStateChanged } from 'firebase/auth'
 import Widgets from './components/Widgets/Widgets'
 
 const App = () => {
-  const user = useSelector(selectUser)
+  const user =useSelector(selectUser)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    auth.onAuthStateChanged(userAuth => {
+    onAuthStateChanged(auth, (userAuth) => {
       if (userAuth) {
         dispatch(login({
           email: userAuth.email,
@@ -26,7 +27,7 @@ const App = () => {
         dispatch(logout())
       }
     })
-  })
+  }, [dispatch])
 
   return (
     <div className='app'>

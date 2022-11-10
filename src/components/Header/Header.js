@@ -8,11 +8,12 @@ import ChatIcon from '@mui/icons-material/Chat'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import HeaderOption from '../HeaderOption/HeaderOption'
 import LinkedinIcon from '../../assets/linkedin-icon.png'
-import { logout } from '../../features/userSlice'
-import { useDispatch } from 'react-redux'
+import { logout, selectUser } from '../../features/userSlice'
+import { useDispatch, useSelector } from 'react-redux'
 import { auth } from '../../services/firebase'
 
 const Header = () => {
+  const user = useSelector(selectUser)
   const dispatch = useDispatch()
 
   const logoutApp = () => {
@@ -60,11 +61,15 @@ const Header = () => {
           title='Notifications'
         />
 
-        <HeaderOption
-          avatar={true}
-          title='Ronny'
-          onClick={logoutApp}
-        />
+        {
+          user && (
+            <HeaderOption
+              avatar={true}
+              title='me'
+              onClick={logoutApp}
+            />
+          )
+        }
       </div>
     </div>
   )

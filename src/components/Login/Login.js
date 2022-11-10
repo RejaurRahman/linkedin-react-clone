@@ -18,20 +18,25 @@ const Login = () => {
   const dispatch = useDispatch()
 
   const loginToApp = async(e) => {
-    e.preventDefault()
+    try {
+      e.preventDefault()
 
-    await signInWithEmailAndPassword(auth, email, password)
-    .then((userAuth) => {
-      dispatch(login({
-        email: userAuth.user.email,
-        uid: userAuth.user.uid,
-        displayName: userAuth.user.displayName,
-        profileUrl: userAuth.user.photoURL
-      }))
-    }).catch(error => alert(error))
+      await signInWithEmailAndPassword(auth, email, password).then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+            photoUrl: userAuth.user.photoURL
+          })
+        )
+      })
+    } catch (error) {
+      alert(error)
+    }
   }
 
-  const register = async () => {
+  const register = async() => {
     if (!name) {
       return alert('Please enter a full name!')
     }
