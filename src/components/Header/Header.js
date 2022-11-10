@@ -61,7 +61,7 @@ const Header = () => {
         />
 
         <HeaderOption
-          avatar='https://media-exp1.licdn.com/dms/image/C4D03AQGRdw2cZmz0FA/profile-displayphoto-shrink_100_100/0/1625271689587?e=1673481600&v=beta&t=oBBASaE4qtiOTg4Ctqndizl8RkEi0LR1Fapv9zEbUrk'
+          avatar={true}
           title='Ronny'
           onClick={logoutApp}
         />

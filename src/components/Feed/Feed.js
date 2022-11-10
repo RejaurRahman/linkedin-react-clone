@@ -17,8 +17,11 @@ import {
   orderBy,
   query,
 } from 'firebase/firestore'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../features/userSlice'
 
 const Feed = () => {
+  const user = useSelector(selectUser)
   const [input, setInput] = useState('')
   const [posts, setPosts] = useState([])
 
@@ -42,10 +45,10 @@ const Feed = () => {
     e.preventDefault();
 
     await setDoc(doc(db, 'posts', input), {
-      name: 'ronny rahman',
-      description: 'this is the test',
+      name: user.displayName,
+      description: user.email,
       message: input,
-      photoUrl: '',
+      photoUrl: user.photoUrl || '',
       timestamp: serverTimestamp()
     })
 
