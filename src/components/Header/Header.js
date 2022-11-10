@@ -8,8 +8,18 @@ import ChatIcon from '@mui/icons-material/Chat'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import HeaderOption from '../HeaderOption/HeaderOption'
 import LinkedinIcon from '../../assets/linkedin-icon.png'
+import { logout } from '../../features/userSlice'
+import { useDispatch } from 'react-redux'
+import { auth } from '../../services/firebase'
 
 const Header = () => {
+  const dispatch = useDispatch()
+
+  const logoutApp = () => {
+    dispatch(logout())
+    auth.signOut()
+  }
+
   return (
     <div className='header'>
       <div className='header__left'>
@@ -53,6 +63,7 @@ const Header = () => {
         <HeaderOption
           avatar='https://media-exp1.licdn.com/dms/image/C4D03AQGRdw2cZmz0FA/profile-displayphoto-shrink_100_100/0/1625271689587?e=1673481600&v=beta&t=oBBASaE4qtiOTg4Ctqndizl8RkEi0LR1Fapv9zEbUrk'
           title='Ronny'
+          onClick={logoutApp}
         />
       </div>
     </div>

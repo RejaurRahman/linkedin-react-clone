@@ -1,52 +1,36 @@
-import React, { useState } from 'react';
-import './Login.css';
-import { auth } from '../../services/firebase';
-import LinkedinLogo from '../../assets/linkedin-logo.png';
-import { useDispatch } from 'react-redux';
-import { login } from '../../features/userSlice';
+import React, { useState } from 'react'
+import './Login.css'
+import { auth } from '../../services/firebase'
+import LinkedinLogo from '../../assets/linkedin-logo.png'
+import { useDispatch } from 'react-redux'
+import { login } from '../../features/userSlice'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile
-} from 'firebase/auth';
+} from 'firebase/auth'
 
 const Login = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [profilePic, setProfilePic] = useState('');
-  const dispatch = useDispatch();
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [profilePic, setProfilePic] = useState('')
+  const dispatch = useDispatch()
 
   const loginToApp = async(e) => {
-    try {
-      e.preventDefault();
-
-      await signInWithEmailAndPassword(auth, email, password).then((userAuth) => {
-        dispatch(
-          login({
-            email: userAuth.user.email,
-            uid: userAuth.user.uid,
-            displayName: userAuth.user.displayName,
-            photoUrl: userAuth.user.photoURL,
-          })
-        );
-      });
-    }
-    catch (error) {
-      alert(error);
-    }
+    e.preventDefault()
   }
 
   const register = async () => {
     if (!name) {
-      return alert('Please enter a full name!');
+      return alert('Please enter a full name!')
     }
 
     await createUserWithEmailAndPassword(auth,email, password)
     .then((userAuth) => {
       updateProfile(userAuth.user, {
         displayName: name,
-        photoURL: profilePic,
+        photoURL: profilePic
       })
       .then(() => {
         dispatch(login({
@@ -103,9 +87,17 @@ const Login = () => {
         </button>
       </form>
 
-      <p>Not a member? <span className='login__register' onClick={register}>register now</span></p>
+      <p>
+        Not a member?
+        <span
+          className='login__register'
+          onClick={register}
+        >
+          register now
+        </span>
+      </p>
     </div>
   )
 }
 
-export default Login;
+export default Login
