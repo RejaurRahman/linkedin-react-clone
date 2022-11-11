@@ -1,12 +1,11 @@
 .widgets {
-  position: sticky;
-  top: 80px;
-  flex: 0.2;
+  width: 100%;
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid #eef3f8;
   height: fit-content;
   padding-bottom: 10px;
+  margin-top: 10px;
 }
 
 .widgets__header {
@@ -52,4 +51,21 @@
 .widgets__articleRight > p {
   font-size: 12px;
   color: #686a6c;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .widgets {
+    position: relative;
+    left: calc(30% - 20px);
+    width: calc(70% + 20px);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .widgets {
+    position: sticky;
+    top: 40px;
+    width: 20%;
+    margin-top: 0;
+  }
 }

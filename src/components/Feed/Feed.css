@@ -1,6 +1,6 @@
 .feed {
-  flex: 0.6;
-  margin: 0 20px;
+  width: 100%;
+  margin: 10px 0 0 0;
 }
 
 .feed__inputContainer {
@@ -38,4 +38,19 @@
 .feed__inputOptions {
   display: flex;
   justify-content: space-evenly;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .feed {
+    width: calc(70% + 20px);
+    position: relative;
+    margin: 0 0 0 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .feed {
+    width: 60%;
+    margin: 0 20px;
+  }
 }

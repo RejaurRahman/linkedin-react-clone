@@ -1,7 +1,5 @@
 .sidebar {
-  top: 80px;
-  position: sticky;
-  flex: 0.2;
+  width: 100%;
   border-radius: 10px;
   text-align: center;
   height: fit-content;
@@ -109,4 +107,20 @@
 
 .sidebar__hash {
   margin: 0 10px 0 5px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .sidebar {
+    top: 40px;
+    position: sticky;
+    width: calc(30% - 40px);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .sidebar {
+    top: 40px;
+    position: sticky;
+    width: 20%;
+  }
 }
