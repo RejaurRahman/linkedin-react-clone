@@ -55,12 +55,6 @@ const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
           Icon={ShareIcon}
           color='686a6c'
         />
-
-        <InputOption
-          title='Send'
-          Icon={SendIcon}
-          color='686a6c'
-        />
       </div>
     </div>
   )
