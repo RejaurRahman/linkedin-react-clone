@@ -11,7 +11,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import Widgets from './components/Widgets/Widgets'
 
 const App = () => {
-  const user =useSelector(selectUser)
+  const user = useSelector(selectUser)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const App = () => {
   }, [dispatch])
 
   return (
-    <div className='app'>
+    <div className={`app ${!user ? 'screen' : ''}`}>
       <Header />
 
       {

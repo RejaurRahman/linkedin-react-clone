@@ -5,17 +5,22 @@
   align-items: center;
 }
 
+.screen {
+  background-color: #fff;
+}
+
 .app__body {
   display: flex;
   flex-flow: wrap;
   max-width: 1200px;
-  margin: 20px 12px 0 12px;
+  margin: 12px;
   width: calc(100% - 24px);
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .app__body {
     width: inherit;
+    margin: 20px 12px 12px 12px;
   }
 }
 
@@ -24,11 +29,13 @@
     max-width: 960px;
     width: inherit;
     flex-flow: initial;
+    margin: 20px 12px 12px 12px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .app__body {
     flex-flow: initial;
+    margin: 20px 12px 12px 12px;
   }
 }

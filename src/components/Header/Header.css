@@ -10,6 +10,18 @@
   z-index: 999;
 }
 
+.screen .header {
+  border-bottom: none;
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .header__left {
   display: flex;
 }
@@ -77,10 +89,21 @@
 .header__avatar > svg {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -2px;
   cursor: pointer;
+  color: #686a6c;
 }
 
-.header__avatar > .MuiAvatar-root {
+.header__avatar .MuiAvatar-root {
   left: 10px;
+}
+
+.header__avatar .headerOption__title {
+  display: flex;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .header__container {
+    max-width: 960px;
+  }
 }

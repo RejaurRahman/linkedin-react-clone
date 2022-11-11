@@ -25,47 +25,51 @@ const Header = () => {
 
   return (
     <div className='header'>
-      <div className='header__left'>
-        <img
-          src={LinkedinIcon}
-          alt='Linkedin Icon'
-        />
+      <div className='header__container'>
+        <div className='header__left'>
+          <img
+            src={LinkedinIcon}
+            alt='Linkedin Icon'
+          />
 
-        <div className='header__search'>
-          <SearchIcon />
-          <input placeholder='Search' type='text' />
+          {
+            user && (
+              <div className='header__search'>
+                <SearchIcon />
+                <input placeholder='Search' type='text' />
+              </div>
+            )
+          }
         </div>
-      </div>
-
-      <div className='header__right'>
-        <HeaderOption
-          Icon={HomeIcon}
-          title='Home'
-        />
-
-        <HeaderOption
-          Icon={SupervisorAccountIcon}
-          title='My Network'
-        />
-
-        <HeaderOption
-          Icon={BusinessCenterIcon}
-          title='Jobs'
-        />
-
-        <HeaderOption
-          Icon={ChatIcon}
-          title='Messages'
-        />
-
-        <HeaderOption
-          Icon={NotificationsIcon}
-          title='Notifications'
-        />
 
         {
           user && (
-            <>
+            <div className='header__right'>
+              <HeaderOption
+                Icon={HomeIcon}
+                title='Home'
+              />
+
+              <HeaderOption
+                Icon={SupervisorAccountIcon}
+                title='My Network'
+              />
+
+              <HeaderOption
+                Icon={BusinessCenterIcon}
+                title='Jobs'
+              />
+
+              <HeaderOption
+                Icon={ChatIcon}
+                title='Messages'
+              />
+
+              <HeaderOption
+                Icon={NotificationsIcon}
+                title='Notifications'
+              />
+
               <div
                 className='header__avatar'
                 onClick={()=>setShowDropdown(!showDropdown)}
@@ -78,7 +82,7 @@ const Header = () => {
               </div>
 
               {
-                showDropdown && (
+                showDropdown ? (
                   <div className='header__dropdown'>
                     <ul className='header__dropdownList'>
                       <li onClick={logoutApp}>
@@ -86,9 +90,9 @@ const Header = () => {
                       </li>
                     </ul>
                   </div>
-                )
+                ) : null
               }
-            </>
+            </div>
           )
         }
       </div>

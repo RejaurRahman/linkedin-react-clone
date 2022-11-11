@@ -38,6 +38,7 @@
 .feed__inputOptions {
   display: flex;
   justify-content: space-evenly;
+  flex-flow: wrap;
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
