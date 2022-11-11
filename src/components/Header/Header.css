@@ -48,4 +48,39 @@
 
 .header__right {
   display: flex;
+  position: relative;
+}
+
+.header__dropdown {
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+  background-color: #fff;
+  border: 1px solid #eef3f8;
+  border-radius: 10px;
+  color: #686a6c;
+}
+
+.header__dropdownList {
+  list-style: none;
+  padding: 0;
+}
+
+.header__dropdownList > li {
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+.header__avatar > svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.header__avatar > .MuiAvatar-root {
+  left: 10px;
 }
