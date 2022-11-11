@@ -15,7 +15,7 @@ import {
   setDoc,
   serverTimestamp,
   orderBy,
-  query,
+  query
 } from 'firebase/firestore'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/userSlice'
@@ -42,7 +42,7 @@ const Feed = () => {
     })
   })
 
-  const sendPost = async (e) => {
+  const sendPost = async(e) => {
     e.preventDefault()
 
     await setDoc(doc(db, 'posts', input), {
