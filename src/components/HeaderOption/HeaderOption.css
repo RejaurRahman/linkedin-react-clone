@@ -1,6 +1,5 @@
 .headerOption {
   display: flex;
-  flex-flow: column;
   justify-content: center;
   align-items: center;
   margin-right: 20px;
@@ -22,17 +21,10 @@
   font-size: 12px;
   font-weight: 400;
   text-transform: capitalize;
-  display: none;
 }
 
 .headerOption__icon {
   object-fit: contain;
   height: 25px !important;
   width: 25px !important;
-}
-
-@media screen and (min-width: 768px) {
-  .headerOption__title {
-    display: flex;
-  }
 }

@@ -51,7 +51,7 @@ const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
         />
 
         <InputOption
-          title='Share'
+          title='Repost'
           Icon={ShareIcon}
           color='686a6c'
         />

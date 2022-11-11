@@ -2,10 +2,6 @@ import React, { useState } from 'react'
 import './Header.css'
 import SearchIcon from '@mui/icons-material/Search'
 import HomeIcon from '@mui/icons-material/Home'
-import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount'
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
-import ChatIcon from '@mui/icons-material/Chat'
-import NotificationsIcon from '@mui/icons-material/Notifications'
 import HeaderOption from '../HeaderOption/HeaderOption'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import LinkedinIcon from '../../assets/linkedin-icon.png'
@@ -34,10 +30,12 @@ const Header = () => {
 
           {
             user && (
-              <div className='header__search'>
-                <SearchIcon />
-                <input placeholder='Search' type='text' />
-              </div>
+              <>
+                <div className='header__search'>
+                  <SearchIcon />
+                  <input placeholder='Search' type='text' />
+                </div>
+              </>
             )
           }
         </div>

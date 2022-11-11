@@ -56,11 +56,16 @@
   border: 0;
   outline: none;
   background-color: transparent;
+  width: 232px;
 }
 
 .header__right {
   display: flex;
   position: relative;
+}
+
+.header__right .headerOption {
+  flex-flow: column;
 }
 
 .header__dropdown {
@@ -89,7 +94,7 @@
 .header__avatar > svg {
   position: absolute;
   right: 0;
-  bottom: -2px;
+  bottom: -4px;
   cursor: pointer;
   color: #686a6c;
 }
@@ -100,6 +105,8 @@
 
 .header__avatar .headerOption__title {
   display: flex;
+  position: relative;
+  top: 1px;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
