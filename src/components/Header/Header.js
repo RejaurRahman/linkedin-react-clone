@@ -50,7 +50,7 @@ const Header = () => {
                 </div>
                 {ReactDOM.createPortal(
                   <div
-                    className={`hearch__searchOverlay ${setShowSearch ? 'close' : 'open'}`}
+                    className={`hearch__searchOverlay ${!showSearch ? 'close' : 'open'}`}
                     onClick={() => setShowSearch(false)}
                   />,
                   document.getElementById('search-overlay-root')
