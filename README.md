@@ -6,6 +6,8 @@ Built using React.JS, Redux and Firebase. This project was referencing a tutoria
 - Removed unused actionable items in post and navigation section.
 - Used _'react-sticky-box'_ to better display sticky nav on scroll.
 
+[Production URL](https://react-linkedin-clone-3.web.app)
+
 Updates to make:
 
 - Allows users to _'LIKE'_ posts.
