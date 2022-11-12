@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
 import './Header.css'
 import SearchIcon from '@mui/icons-material/Search'
 import HomeIcon from '@mui/icons-material/Home'
@@ -12,11 +13,18 @@ import { auth } from '../../services/firebase'
 const Header = () => {
   const user = useSelector(selectUser)
   const [showDropdown, setShowDropdown] = useState(false)
+  const [showSearch, setShowSearch] = useState(false)
   const dispatch = useDispatch()
 
   const logoutApp = () => {
     dispatch(logout())
     auth.signOut()
+  }
+
+  const showSearchBarHandler = (e) => {
+    e.stopPropagation()
+
+    return setShowSearch(!showSearch)
   }
 
   return (
@@ -31,7 +39,25 @@ const Header = () => {
           {
             user && (
               <>
-                <div className='header__search'>
+                <div
+                  className={`header__searchIcon ${!showSearch ? 'header__searchShow' : 'header__searchHide'}`}
+                  onClick={showSearchBarHandler}
+                >
+                  <HeaderOption
+                    Icon={SearchIcon}
+                    title='Search'
+                  />
+                </div>
+                {ReactDOM.createPortal(
+                  <div
+                    className={`hearch__searchOverlay ${setShowSearch ? 'close' : 'open'}`}
+                    onClick={() => setShowSearch(false)}
+                  />,
+                  document.getElementById('search-overlay-root')
+                )}
+                <div
+                  className={`header__search ${!showSearch ? 'header__searchHide' : 'header__searchShow'}`}
+                >
                   <SearchIcon />
                   <input placeholder='Search' type='text' />
                 </div>
