@@ -55,7 +55,8 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .widgets {
-    position: relative;
+    position: relative !important;
+    top: 0 !important;
     left: calc(30% - 20px);
     width: calc(70% + 20px);
   }
@@ -63,8 +64,6 @@
 
 @media screen and (min-width: 992px) {
   .widgets {
-    position: sticky;
-    top: 40px;
     width: 20%;
     margin-top: 0;
   }

@@ -2,6 +2,7 @@ import React from 'react'
 import './Widgets.css'
 import InfoIcon from '@mui/icons-material/Info'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
+import StickyBox from 'react-sticky-box'
 
 const Widgets = () => {
   const newsArticle = (heading, subtitle) => {
@@ -23,7 +24,7 @@ const Widgets = () => {
   }
 
   return (
-    <div className='widgets'>
+    <StickyBox offsetTop={80} className='widgets'>
       <div className='widgets__header'>
         <h2>LinkedIn News</h2>
         <InfoIcon />
@@ -35,7 +36,7 @@ const Widgets = () => {
       {newsArticle('LinkedIn connections might not get you a better job, secret experiment reveals', 'Tech:September 2022')}
       {newsArticle('How sellers are winning in today`s challenging new world', 'Business:August 2022')}
       {newsArticle('Microsoft blames economic woes for missing profit targets', 'News: July 2022')}
-    </div>
+    </StickyBox>
   )
 }
 

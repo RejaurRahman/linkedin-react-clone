@@ -4,6 +4,7 @@ import { Avatar } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/userSlice'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import StickyBox from 'react-sticky-box'
 
 const Sidebar = () => {
   let [moreSidebar, setMoreSidebar] = useState(true)
@@ -21,7 +22,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className='sidebar'>
+    <StickyBox offsetTop={80} className='sidebar'>
       <div className={`sidebar__top ${moreSidebar ? 'sidebar__topLess' : ''}`}>
         <img
           src='https://i.pinimg.com/736x/dc/55/c2/dc55c27ccd37988dd63e5db558dca3d7.jpg' alt='Background Banner'
@@ -69,7 +70,7 @@ const Sidebar = () => {
 
         <ExpandMoreIcon />
       </div>
-    </div>
+    </StickyBox>
   )
 }
 

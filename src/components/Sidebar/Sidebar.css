@@ -170,10 +170,12 @@
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
+}
 
+@media screen and (max-width: 767px) {
   .sidebar {
-    top: 40px;
-    position: sticky;
+    position: relative !important;
+    top: 0 !important;
   }
 }
 
