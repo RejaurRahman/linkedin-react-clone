@@ -19,6 +19,14 @@ Updates to make:
 - Modernize home screen so users can also register and sign in using Google Authenticator.
 - Fetch News from API to add to the widgets bar
 
+## LinkedIn login/Register Screen - Before making updates to cloned project
+
+![LinkedIn Login/Register Preview Page Image](linkedin-homepage.jpg)
+
+## LinkedIn Profile Feed Screen - Before making updates to cloned project
+
+![LinkedIn User Profile Preview Page Image](linkedin-user-profile.jpg)
+
 ## Getting Started with Create React App and Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
